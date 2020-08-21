@@ -1,0 +1,21 @@
+sum = []
+    total = 0
+    if n==1:
+        return arr
+    elif n==2:
+        return -1
+    elif n>2:
+        for i in range(0,n):
+            total = total + arr[i]
+            sum.append(total)          
+        for i in range(2,n-1):
+            leftarr = sum[i] - arr[i]
+            rightarr = total - sum[i]
+            if leftarr==rightarr:
+                return arr[i]
+if __name__ == '__main__':
+    arr=[-7,1,5,2,-4,3,0]
+    n=len(arr)
+    ans = equilibriumpoint(arr,n)
+    print(ans)
+    
